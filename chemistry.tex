@@ -15,10 +15,6 @@
 
 \begin{document}
 \section{Wave-particle duality}
-TODO:\@ Find a way to make a scheme like the one on my notes. All it does is say
-that the atomic number is the number of electrons which is equals to the number
-of protons, and that the mass is the protons plus the neutrons. 
-
 \begin{tikzpicture}
   \draw (0.2,0) node {${}^9_4Be$};
   \draw [left, text width=6cm](-1,1) node {The mass is the protons plus the neutrons};
@@ -31,12 +27,9 @@ of protons, and that the mass is the protons plus the neutrons.
 \begin{itemize}
     \item Wave Length ($\lambda$) --- Distance between two consecutive points of
           equal vibrational phase.
-
-          TODO:\@ Add pretty image of wave showing $\lambda$
           \begin{figure}[H]
           \includegraphics[scale=0.5]{lambdawave}
           \end{figure}
-
           \begin{align*}
               1\si{\micro\metre} = \num{e-6}\si{\metre} \\[0.5em]
               1\si{\nano\metre} = \num{e-9}\si{\metre}  \\[0.5em]
@@ -48,10 +41,156 @@ of protons, and that the mass is the protons plus the neutrons.
           \begin{align*}
               1\si{\mega\hertz} = \num{e6}\si{\hertz} \\[0.5em]
               1\si{\giga\hertz} = \num{e9}\si{\hertz} \\[0.5em]
-              1\si{\tera\hertz} = \num{e13}\si{\hertz} \\[0.5em]              
+              1\si{\tera\hertz} = \num{e13}\si{\hertz} \\[0.5em]
           \end{align*}
-          TODO:\@ Finish these
-    \item Period ($\tau$) --- Duration of a cycle $V=\frac{1}{T}$
-\end{itemize}
 
+    \item Period ($T$) --- Duration of a cycle $V=\frac{1}{T}$
+
+    \item Wave Number --- Number of complete cycles per unit of time
+          \begin{align*}
+              \bar{\nu} = \frac{1}{\lambda}
+          \end{align*}
+          TODO:\@ Is the name of this right?
+    \item Propagation Speed --- Speed with which the wave propagates in a given
+          direction.
+          \begin{align*}
+                \nu = \frac{c}{\lambda} \\
+                \lambda = cT
+          \end{align*}
+          TODO:\@ Add graphics for the wave, showing with amplitude as the Y axis,
+          time as the X axis, and pointing to the nodes, peaks, and minimuns or
+          whatever their name is in english.
+\end{itemize}
+Note that the frequency, and the period are, unlike the wavelegth, independent
+of the mean through which the wave travels.
+\subsection{Energy of an Electromagnetic Wave}
+TODO:\@ Align these sideways
+\begin{align*}
+        E = h\nu \\
+        E = nh\nu \\
+\end{align*}
+Where $E$ is the energy of a photon or electron, $h$ is Planck's constant
+($h = 6.62607\times 10^{-34}\si{\joule\second}$)
+\subsection{Electromagnetic Spectrum}
+TODO:\@ Add graphics here. It shows the different radiations from
+microwave to gamma rays, there's also an image showing the combinations of RGB
+lights, and it also mentions the largest and smallest (red, violet respectively)
+frequencies that the human eye can see.
+\subsection{Interference}
+Interference is a phenomenom associated with the wave-like behavior of
+electromagnetic radiation. The interference between two waves travelling through
+the same region in space yields another wave, which is the algebric sum of the
+two interferring waves.
+
+TODO:\@ Graphs for constructive and destructive interferrence.
+\subsection{Stationary Waves}
+REVIEW NEEDED
+
+The interference between two waves travelling at the same speed, but in opposing
+directions creates a \emph{stationary wave} --- a wave in which, throughout
+time, the nodes and peaks (TODO:\@ Peaks isn't the word I want, I mean the part
+which is either a peak or valley) stay at the same point in space
+
+TODO:\@ Graph for ``wave in a box'' stationary wave.
+
+The existence of boundary conditions, beyond causing the phenomenon to be
+stationary, has another important consequence.The wave functions that describe
+it [the wave] cannot be ordinary. It's wavelength depends on imposed physical
+constraints (in this case a distance between points in space) and differ
+from each other through an integer.
+\begin{align*}
+    \lambda = \frac{2L}{n} \quad n=1,2,3,\ldots \\
+\end{align*}
+TODO:\@ I forgot how to properly align these, so I did ``\quad'' for the time
+beign.
+
+With this we can see that the solutions are discrete, as opposed to being continuous, and the
+ factor distinguishing them is the integer $n$, which we call a quatum number.
+
+TODO:\@ Add graph showing waves with different $n$'s
+\subsection{Electromagnetic Radiation}
+The propagation of electromagnetic radiation is a wave-like movement, and with
+it we associate a period $T$, a frequency $\nu$, and a wavelength $\lambda$.
+While in some cases the eletromagnetic radiation will present typical wave-like
+behavior, such as diffraction, on others it behaves in  a particle-like manner.
+One example of the particle-like nature of radiation is the well known
+``photoelectric effect'' experiment.
+
+TODO:\@ Diagram of the photoelectric setup.
+
+From this experiment we could verify that:
+\begin{enumerate}
+    \item The emission of electrons on off the plate depends on the frequency of
+          the incident radiation, and not on the intensity of the inciding beam.
+    \item The number of emitted electrons is proportional to the intensity of
+          the beam
+    \item Emission is imediate, even for low-intensity beams.
+    \item Electrons bind (connect) to the metal with an energy $W$, which has to
+          the incident beam must provide to release the electron. The kinetic
+          energy of said electron is such that:
+          \begin{align*}
+              E_c = \frac{1}{2}\si{\metre\newton}^2 = E_{\text{photon}} - W \\
+              E_c = h\nu - W \\
+          \end{align*}
+          TODO:\@ Properly align these.\\
+\end{enumerate}
+Below a certain \emph{critical frequency} $\nu_0$, there will be no
+photoemission, because the energy $h\nu$ is insufficient to ``beat''
+the attraction potential $W$. We then have
+$$h\nu_0 = W$$
+TODO:\@ Add the graph that is at the beginning of page 5.
+
+The intensity of the inciding beam will be a measurement of the number of
+\emph{quanta} transmitted by the radiation, given that the higher the intensity
+the more photons are emitted per unit of time. The interpretation of the
+photoelectric effect suggests that light is a particle, and that the energy for
+each transmitted particle is $h\nu$. Einstein named these particles \emph{photons}.
+
+In other experiments, such as the dark-body emission, the particle-like
+description of light is the only one compatible with the results. We can now see
+that the wave-like and particle-like aspects of light are intimately associated,
+and that the best description of radiation is a \emph{dual} one.
+\subsection{de-Broglie Hypothesis}
+TODO:\@ Insert all the formulas at the end of page 5. Take care of formatting
+them in a sensible way.
+
+de-Broglie, with the dualistic properties of radiation in mind,
+proposed that this type of behavior, verified for electromagnetic radiation,
+would be valid for all the other entities which had, up until that point, been
+identified as particles. This idea would be described mathematically by the
+relation:
+$$\lambda = \frac{h}{p}$$
+\subsection{Electrons}
+\begin{itemize}
+    \item Particle-like Behavior
+          \begin{itemize}
+              \item The determination of the mass of the electron attributed to
+                    it a particle-like characteristic.
+          \end{itemize}
+    \item Wave-like Behavior
+          \begin{itemize}
+              \item Electrons suffer difraction when interferring with crystals.
+          \end{itemize}
+\end{itemize}
+\subsection{Heisenberg's Uncertainty Principle}
+A direct consequence of the dualistic behavior is the impossibily of measuring
+with precision the position and the momentum of a particle. Subsequently we
+must, at the quantum level, abandon the concept of trajectory since, to describe
+it we must know at any given time the position and momentum of a given particle.
+\subsection{Schrödinger's Equation}
+\begin{align*}
+    E = E_p + E_k \implies E\psi = (E_p + E_k)\psi \\
+    \implies -\frac{h^2}{8\pi^2 m}\frac{d^2\psi(x)}{dx^2} + E_p\psi(x) = E_{\psi(x)}
+\end{align*}
+
+TODO:\@ Add the following as a ``subtitle'' to the equations, `Time independent
+Schrödinger equation on 1 dimension, describing any system that exibits
+particle-wave behavior'
+
+Where $\psi$ is the wave function.
+\subsection{Physical Interpretation of Schrödinger's solutions}
+
+The wave function $\psi(x)$ does not have any physical meaning at first, but
+it's square $\psi{(x)}^2$ is proportional to the density of particles at the point
+$x$. If $\psi(x)$ represents a single particle, it's square will be
 \end{document}
