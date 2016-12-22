@@ -9,7 +9,6 @@
 \usepackage{wrapfig}
 \usepackage{float}
 \usepackage{siunitx}
-
 \graphicspath{ {Images/} }
 
 
@@ -19,6 +18,15 @@
 TODO:\@ Find a way to make a scheme like the one on my notes. All it does is say
 that the atomic number is the number of electrons which is equals to the number
 of protons, and that the mass is the protons plus the neutrons.
+
+\begin{tikzpicture}
+  \draw (0.2,0) node {${}^9_4Be$};
+  \draw [left, text width=6cm](-1,1) node {The atomic number is the number of electrons, which equals the number of protons};
+  \draw [left, text width=6cm](-1,-1) node {The mass is the protons plus the neutrons};
+  \draw [->] (-0.2,-0.05) -- (-1,-1);
+  \draw [->] (-0.2,0.1) -- (-1,1);
+\end{tikzpicture}
+
 \subsection{Characteristics of a Wave}
 \begin{itemize}
     \item Wave Lenght ($\lambda$) --- Distance between two consecutive points of
