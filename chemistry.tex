@@ -5,12 +5,13 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{tikz}
+\usepackage{pgfplots}
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{float}
 \usepackage{siunitx}
 \graphicspath{ {Images/} }
-
+\pgfplotsset{width=8cm,compat=1.14}
 
 
 \begin{document}
@@ -27,9 +28,24 @@
 \begin{itemize}
     \item Wave Length ($\lambda$) --- Distance between two consecutive points of
           equal vibrational phase.
-          \begin{figure}[H]
-          \includegraphics[scale=0.5]{lambdawave}
-          \end{figure}
+          \begin{center}
+              \begin{tikzpicture}
+              \begin{axis}
+              [
+                domain=0:2*pi,
+                samples=200,
+                no marks, grid,
+                xticklabels={0, $\frac{\pi}{4}$,  $\frac{\pi}{2}$,
+                             $\frac{3\pi}{4}$, $\pi$,$\frac{5\pi}{4}$,
+                             $\frac{3\pi}{2}$, $\frac{7\pi}{2}$, 2$\pi$},
+                xtick={0, 0.7853,...,6.2832},
+                ymax=1.5
+              ]
+              \addplot {sin(deg(x))};
+              \draw[<->]      (0,1.2) -- node[above] {$\lambda$} (6.2832,1.2);
+              \end{axis}
+              \end{tikzpicture}
+          \end{center}
           \begin{align*}
               1\si{\micro\metre} = \num{e-6}\si{\metre} \\[0.5em]
               1\si{\nano\metre} = \num{e-9}\si{\metre}  \\[0.5em]
@@ -64,10 +80,8 @@
 Note that the frequency, and the period are, unlike the wavelegth, independent
 of the mean through which the wave travels.
 \subsection{Energy of an Electromagnetic Wave}
-TODO:\@ Align these sideways
 \begin{align*}
-        E = h\nu \\
-        E = nh\nu \\
+        E &= h\nu && E=nh\nu \\
 \end{align*}
 Where $E$ is the energy of a photon or electron, $h$ is Planck's constant
 ($h = 6.62607\times 10^{-34}\si{\joule\second}$)
@@ -129,8 +143,8 @@ From this experiment we could verify that:
           the incident beam must provide to release the electron. The kinetic
           energy of said electron is such that:
           \begin{align*}
-              E_c = \frac{1}{2}\si{\metre\newton}^2 = E_{\text{photon}} - W \\
-              E_c = h\nu - W \\
+              E_c &= \frac{1}{2}\si{\metre\newton}^2 = E_{\text{photon}} - W \\
+              E_c &= h\nu - W \\
           \end{align*}
           TODO:\@ Properly align these.\\
 \end{enumerate}
@@ -157,7 +171,7 @@ them in a sensible way.
 de-Broglie, with the dualistic properties of radiation in mind,
 proposed that this type of behavior, verified for electromagnetic radiation,
 would be valid for all the other entities which had, up until that point, been
-identified as particles. This idea would be described mathematically by the
+identified as particles. He would later describe this idea with the
 relation:
 $$\lambda = \frac{h}{p}$$
 \subsection{Electrons}
