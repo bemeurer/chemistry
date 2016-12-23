@@ -18,111 +18,111 @@
 \begin{document}
 \section{Wave-particle duality}
 \begin{tikzpicture}
-  \draw (0.2,0) node {$\boxed{{}^9_4Be}$};
-  \draw [left, text width=6cm](-1,1) node {Mass: Protons plus Neutrons};
-  \draw [left, text width=6cm](-1,-1) node {Atomic number: number of Electrons or Protons};
-  \draw [->] (-0.15,-0.2) -- (-1.2,-0.8);
-  \draw [->] (-0.15,0.1) -- (-2.3,1);
+	\draw (0.2,0) node {$\boxed{{}^9_4Be}$};
+	\draw [left, text width=6cm](-1,1) node {Mass: Protons plus Neutrons};
+	\draw [left, text width=6cm](-1,-1) node {Atomic number: number of Electrons or Protons};
+	\draw [->] (-0.15,-0.2) -- (-1.2,-0.8);
+	\draw [->] (-0.15,0.1) -- (-2.3,1);
 \end{tikzpicture}
 
 \subsection{Characteristics of a Wave}
 \begin{itemize}
-    \item Wave Length ($\lambda$) --- Distance between two consecutive points of
-          equal vibrational phase.
-          \begin{center}
-              \begin{tikzpicture}
-              \begin{axis}
-              [
-                domain=0:2*pi,
-                samples=200,
-                xmin=-0.2,
-                xmax=2*pi+0.2,
-                ymin=-1,
-                no marks,grid,
-                xticklabels={0, $\frac{\pi}{4}$,  $\frac{\pi}{2}$,
-                             $\frac{3\pi}{4}$, $\pi$,$\frac{5\pi}{4}$,
-                             $\frac{3\pi}{2}$, $\frac{7\pi}{2}$, 2$\pi$},
-                xtick={0, 0.7853,...,6.2832},
-                ymax=1.5
-              ]
-              \addplot {sin(deg(x))};
-              \draw[<->]      (0,1.2) -- node[above] {$\lambda$} (6.2832,1.2);
-              \end{axis}
-              \end{tikzpicture}
-          \end{center}
-          \begin{align*}
-              1\si{\micro\metre} = \num{e-6}\si{\metre} \\[0.5em]
-              1\si{\nano\metre} = \num{e-9}\si{\metre}  \\[0.5em]
-              1\si{\angstrom} = \num{e-10}\si{\metre}   \\[0.5em]
-              1\si{\pico\metre} = \num{e-12}\si{\metre} \\[0.5em]
-          \end{align*}
-    \item Frequency ($\nu$) --- Number of vibrations or complete cycles per
-          unit of time.
-          \begin{align*}
-              1\si{\mega\hertz} = \num{e6}\si{\hertz} \\[0.5em]
-              1\si{\giga\hertz} = \num{e9}\si{\hertz} \\[0.5em]
-              1\si{\tera\hertz} = \num{e12}\si{\hertz} \\[0.5em]
-          \end{align*}
+	\item Wave Length ($\lambda$) --- Distance between two consecutive points of
+	      equal vibrational phase.
+	      \begin{center}
+	      	\begin{tikzpicture}
+	      		\begin{axis}
+	      			[
+	      			domain=0:2*pi,
+	      			samples=200,
+	      			xmin=-0.2,
+	      			xmax=2*pi+0.2,
+	      			ymin=-1,
+	      			no marks,grid,
+	      			xticklabels={0, $\frac{\pi}{4}$,  $\frac{\pi}{2}$,
+	      				$\frac{3\pi}{4}$, $\pi$,$\frac{5\pi}{4}$,
+	      				$\frac{3\pi}{2}$, $\frac{7\pi}{2}$, 2$\pi$},
+	      			xtick={0, 0.7853,...,6.2832},
+	      			ymax=1.5
+	      			]
+	      			\addplot {sin(deg(x))};
+	      			\draw[<->]      (0,1.2) -- node[above] {$\lambda$} (6.2832,1.2);
+	      		\end{axis}
+	      	\end{tikzpicture}
+	      \end{center}
+	      \begin{align*}
+	      	1\si{\micro\metre} = \num{e-6}\si{\metre} \\[0.5em]
+	      	1\si{\nano\metre} = \num{e-9}\si{\metre}  \\[0.5em]
+	      	1\si{\angstrom} = \num{e-10}\si{\metre}   \\[0.5em]
+	      	1\si{\pico\metre} = \num{e-12}\si{\metre} \\[0.5em]
+	      \end{align*}
+	\item Frequency ($\nu$) --- Number of vibrations or complete cycles per
+	      unit of time.
+	      \begin{align*}
+	      	1\si{\mega\hertz} = \num{e6}\si{\hertz}  \\[0.5em]
+	      	1\si{\giga\hertz} = \num{e9}\si{\hertz}  \\[0.5em]
+	      	1\si{\tera\hertz} = \num{e12}\si{\hertz} \\[0.5em]
+	      \end{align*}
 
-    \item Period ($T$) --- Duration of a cycle $V=\frac{1}{T}$
+	\item Period ($T$) --- Duration of a cycle $V=\frac{1}{T}$
 
-    \item Wavenumber --- Number of complete cycles per unit of time
-          \begin{align*}
-              \bar{\nu} = \frac{1}{\lambda}
-          \end{align*}
-    \item Propagation Speed --- Speed with which the wave propagates in a given
-          direction.
-          \begin{align*}
-                \nu = \frac{c}{\lambda} \\
-                \lambda = cT
-          \end{align*}
-          \begin{center}
-              \begin{tikzpicture}
-              \begin{axis}
-              [
-                axis lines=middle,
-                axis line style={->},
-                xmin=-0.2,
-                xmax=4*pi+0.2,
-                xticklabels={,,},
-                xlabel={T($\si{\second}$)},
-                ymin=-1.5,
-                ymax=1.5,
-                yticklabels={,,},
-                ylabel={Amplitude},
-                ylabel near ticks,
-              ]
-              \addplot[blue, very thick,samples=200,domain=0:4*pi] {(sin(deg(x)))/1.5};
-              \node (crest) at (1.5*pi, 1.25) {Crest};
-              \node (trough) at (2.5*pi, -1.25) {Trough};
-              \node (node) at (0.5*pi, -1) {Node};
-              \draw[->] (crest) -- (0.5*pi, 1/1.5);
-              \draw[->] (crest) -- (2.5*pi, 1/1.5);
-              \draw[->] (trough) -- (1.5*pi, -1/1.5);
-              \draw[->] (trough) -- (3.5*pi, -1/1.5);
-              \draw[->] (node) -- (0,0);
-              \draw[->] (node) -- (pi,0);
-              \draw[->] (node) -- (2*pi,0);
-              \draw[->] (node) -- (3*pi,0);
-              \draw[->] (node) -- (4*pi,0);
-              \end{axis}
-              \end{tikzpicture}
-          \end{center}
+	\item Wavenumber --- Number of complete cycles per unit of time
+	      \begin{align*}
+	      	\bar{\nu} = \frac{1}{\lambda}
+	      \end{align*}
+	\item Propagation Speed --- Speed with which the wave propagates in a given
+	      direction.
+	      \begin{align*}
+	      	\nu = \frac{c}{\lambda} \\
+	      	\lambda = cT
+	      \end{align*}
+	      \begin{center}
+	      	\begin{tikzpicture}
+	      		\begin{axis}
+	      			[
+	      			axis lines=middle,
+	      			axis line style={->},
+	      			xmin=-0.2,
+	      			xmax=4*pi+0.2,
+	      			xticklabels={,,},
+	      			xlabel={T($\si{\second}$)},
+	      			ymin=-1.5,
+	      			ymax=1.5,
+	      			yticklabels={,,},
+	      			ylabel={Amplitude},
+	      			ylabel near ticks,
+	      			]
+	      			\addplot[blue, very thick,samples=200,domain=0:4*pi] {(sin(deg(x)))/1.5};
+	      			\node (crest) at (1.5*pi, 1.25) {Crest};
+	      			\node (trough) at (2.5*pi, -1.25) {Trough};
+	      			\node (node) at (0.5*pi, -1) {Node};
+	      			\draw[->] (crest) -- (0.5*pi, 1/1.5);
+	      			\draw[->] (crest) -- (2.5*pi, 1/1.5);
+	      			\draw[->] (trough) -- (1.5*pi, -1/1.5);
+	      			\draw[->] (trough) -- (3.5*pi, -1/1.5);
+	      			\draw[->] (node) -- (0,0);
+	      			\draw[->] (node) -- (pi,0);
+	      			\draw[->] (node) -- (2*pi,0);
+	      			\draw[->] (node) -- (3*pi,0);
+	      			\draw[->] (node) -- (4*pi,0);
+	      		\end{axis}
+	      	\end{tikzpicture}
+	      \end{center}
 
 \end{itemize}
 Note that the frequency, and the period are, unlike the wavelegth, independent
 of the mean through which the wave travels.
 \subsection{Energy of an Electromagnetic Wave}
 \begin{align*}
-        E &= h\nu && E=nh\nu \\
+	E & = h\nu &   & E=nh\nu \\
 \end{align*}
 Where $E$ is the energy of a photon or electron, $h$ is Planck's constant
 ($h = 6.62607\times 10^{-34}\si{\joule\second}$)
 \subsection{Electromagnetic Spectrum}
 TODO:\@ Add venn-diagram of light combinations. Use Tikz.
 \begin{figure}[H]
-    \centering
-\includegraphics[scale=0.65]{radiations}
+	\centering
+	\includegraphics[scale=0.65]{radiations}
 \end{figure}
 \subsection{Interference}
 Interference is a phenomenom associated with the wave-like behavior of
@@ -133,104 +133,104 @@ two interferring waves.
 TODO:\@ Fix double Y axis on these
 
 \begin{figure}[H]
-    \begin{subfigure}[b]{0.4\textwidth}
-    \begin{tikzpicture}
-    \begin{axis}
-    [
-      axis lines=middle,
-      axis line style={->},
-      xmin=0,
-      xmax=4*pi,
-      xticklabels={,,},
-      ymin=-1,
-      ymax=1,
-      yticklabels={,,},
-    ]
-    \addplot[red, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
-    \end{axis}
-    \begin{axis}
-    [
-      yshift=-2cm,
-      axis lines=middle,
-      axis line style={->},
-      xmin=-0,
-      xmax=4*pi,
-      xticklabels={,,},
-      ymin=-1,
-      ymax=1,
-      yticklabels={,,},
-    ]
-    \addplot[blue, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
-    \end{axis}
-    \end{tikzpicture}
+	\begin{subfigure}[b]{0.4\textwidth}
+		\begin{tikzpicture}
+			\begin{axis}
+				[
+				axis lines=middle,
+				axis line style={->},
+				xmin=0,
+				xmax=4*pi,
+				xticklabels={,,},
+				ymin=-1,
+				ymax=1,
+				yticklabels={,,},
+				]
+				\addplot[red, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
+			\end{axis}
+			\begin{axis}
+				[
+				yshift=-2cm,
+				axis lines=middle,
+				axis line style={->},
+				xmin=-0,
+				xmax=4*pi,
+				xticklabels={,,},
+				ymin=-1,
+				ymax=1,
+				yticklabels={,,},
+				]
+				\addplot[blue, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
+			\end{axis}
+		\end{tikzpicture}
 
-    \begin{tikzpicture}
-    \begin{axis}
-    [
-      axis lines=middle,
-      axis line style={->},
-      xmin=0,
-      xmax=4*pi,
-      xticklabels={,,},
-      ymin=-1.1,
-      ymax=1.1,
-      yticklabels={,,},
-    ]
-    \addplot[purple, very thick,samples=200,domain=0:4*pi] {(sin(deg(x)))};
-    \end{axis}
-    \end{tikzpicture}
-    \caption{Constructive interference}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.4\textwidth}
-    \begin{tikzpicture}
-    \begin{axis}
-    [
-      axis lines=middle,
-      axis line style={->},
-      xmin=0,
-      xmax=4*pi,
-      xticklabels={,,},
-      ymin=-1,
-      ymax=1,
-      yticklabels={,,},
-    ]
-    \addplot[red, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
-    \end{axis}
-    \begin{axis}
-    [
-      yshift=-2cm,
-      axis lines=middle,
-      axis line style={->},
-      xmin=-0,
-      xmax=4*pi,
-      xticklabels={,,},
-      ymin=-1,
-      ymax=1,
-      yticklabels={,,},
-    ]
-    \addplot[blue, very thick,samples=200,domain=0:4*pi] {(sin(deg(x+pi))/2)};
-    \end{axis}
-    \end{tikzpicture}
+		\begin{tikzpicture}
+			\begin{axis}
+				[
+				axis lines=middle,
+				axis line style={->},
+				xmin=0,
+				xmax=4*pi,
+				xticklabels={,,},
+				ymin=-1.1,
+				ymax=1.1,
+				yticklabels={,,},
+				]
+				\addplot[purple, very thick,samples=200,domain=0:4*pi] {(sin(deg(x)))};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Constructive interference}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.4\textwidth}
+		\begin{tikzpicture}
+			\begin{axis}
+				[
+				axis lines=middle,
+				axis line style={->},
+				xmin=0,
+				xmax=4*pi,
+				xticklabels={,,},
+				ymin=-1,
+				ymax=1,
+				yticklabels={,,},
+				]
+				\addplot[red, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
+			\end{axis}
+			\begin{axis}
+				[
+				yshift=-2cm,
+				axis lines=middle,
+				axis line style={->},
+				xmin=-0,
+				xmax=4*pi,
+				xticklabels={,,},
+				ymin=-1,
+				ymax=1,
+				yticklabels={,,},
+				]
+				\addplot[blue, very thick,samples=200,domain=0:4*pi] {(sin(deg(x+pi))/2)};
+			\end{axis}
+		\end{tikzpicture}
 
-    \begin{tikzpicture}
-    \begin{axis}
-    [
-      samples=200
-      axis lines=middle,
-      axis line style={->},
-      xmin=0,
-      xmax=4*pi,
-      xticklabels={,,},
-      ymin=-1.1,
-      ymax=1.1,
-      yticklabels={,,},
-    ]
-    \addplot[purple, very thick,samples=200,domain=0:4*pi] {0};
-    \end{axis}
-    \end{tikzpicture}
-    \caption{Destructive interference}
-    \end{subfigure}
+		\begin{tikzpicture}
+			\begin{axis}
+				[
+				samples=200
+				axis lines=middle,
+				axis line style={->},
+				xmin=0,
+				xmax=4*pi,
+				xticklabels={,,},
+				ymin=-1.1,
+				ymax=1.1,
+				yticklabels={,,},
+				]
+				\addplot[purple, very thick,samples=200,domain=0:4*pi] {0};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Destructive interference}
+	\end{subfigure}
 \end{figure}
 
 \subsection{Stationary Waves}
@@ -246,56 +246,56 @@ it [the wave] cannot be ordinary. It's wavelength depends on imposed physical
 constraints (in this case a distance between points in space) and differ
 from each other through an integer.
 \[
-    \lambda = \frac{2L}{n} \qquad n=1,2,3,\ldots \\
+	\lambda = \frac{2L}{n} \qquad n=1,2,3,\ldots \\
 \]
 
 With this we can see that the solutions are discrete, as opposed to being continuous, and the
- factor distinguishing them is the integer $n$, which we call a quatum number.
+factor distinguishing them is the integer $n$, which we call a quatum number.
 \begin{figure}[H]
-    \begin{tikzpicture}
-    \begin{axis}
-    [
-      axis lines=middle,
-      axis line style={->},
-      xmin=0,
-      xmax=4*pi,
-      xticklabels={,,},
-      ymin=-1,
-      ymax=1,
-      yticklabels={,,},
-    ]
-    \addplot[black, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
-    \end{axis}
-    \begin{axis}
-    [
-      yshift=2cm,
-      axis lines=middle,
-      axis line style={->},
-      xmin=-0,
-      xmax=4*pi,
-      xticklabels={,,},
-      xlabel={$\lambda = \frac{2L}{3}$}
-      ymin=-1,
-      ymax=1,
-      yticklabels={,,},
-    ]
-    \addplot[black, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
-    \end{axis}
-    \begin{axis}
-    [
-      yshift=-2cm,
-      axis lines=middle,
-      axis line style={->},
-      xmin=-0,
-      xmax=4*pi,
-      xticklabels={,,},
-      ymin=-1,
-      ymax=1,
-      yticklabels={,,},
-    ]
-    \addplot[black, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
-    \end{axis}
-    \end{tikzpicture}
+	\begin{tikzpicture}
+		\begin{axis}
+			[
+			axis lines=middle,
+			axis line style={->},
+			xmin=0,
+			xmax=4*pi,
+			xticklabels={,,},
+			ymin=-1,
+			ymax=1,
+			yticklabels={,,},
+			]
+			\addplot[black, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
+		\end{axis}
+		\begin{axis}
+			[
+			yshift=2cm,
+			axis lines=middle,
+			axis line style={->},
+			xmin=-0,
+			xmax=4*pi,
+			xticklabels={,,},
+			xlabel={$\lambda = \frac{2L}{3}$}
+			ymin=-1,
+			ymax=1,
+			yticklabels={,,},
+			]
+			\addplot[black, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
+		\end{axis}
+		\begin{axis}
+			[
+			yshift=-2cm,
+			axis lines=middle,
+			axis line style={->},
+			xmin=-0,
+			xmax=4*pi,
+			xticklabels={,,},
+			ymin=-1,
+			ymax=1,
+			yticklabels={,,},
+			]
+			\addplot[black, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
+		\end{axis}
+	\end{tikzpicture}
 \end{figure}
 
 TODO:\@ Fix this. No idea how to make it work as intended.
@@ -311,18 +311,18 @@ TODO:\@ Diagram of the photoelectric setup.
 
 From this experiment we could verify that:
 \begin{enumerate}
-    \item The emission of electrons on off the plate depends on the frequency of
-          the incident radiation, and not on the intensity of the inciding beam.
-    \item The number of emitted electrons is proportional to the intensity of
-          the beam
-    \item Emission is imediate, even for low-intensity beams.
-    \item Electrons bind (connect) to the metal with an energy $W$, which has to
-          the incident beam must provide to release the electron. The kinetic
-          energy of said electron is such that:
-          \begin{align*}
-              E_c &= \frac{1}{2}\si{\metre\newton}^2 = E_{\text{photon}} - W \\
-              E_c &= h\nu - W \\
-          \end{align*}
+	\item The emission of electrons on off the plate depends on the frequency of
+	      the incident radiation, and not on the intensity of the inciding beam.
+	\item The number of emitted electrons is proportional to the intensity of
+	      the beam
+	\item Emission is imediate, even for low-intensity beams.
+	\item Electrons bind (connect) to the metal with an energy $W$, which has to
+	      the incident beam must provide to release the electron. The kinetic
+	      energy of said electron is such that:
+	      \begin{align*}
+	      	E_c & = \frac{1}{2}\si{\metre\newton}^2 = E_{\text{photon}} - W \\
+	      	E_c & = h\nu - W                                                \\
+	      \end{align*}
 \end{enumerate}
 Below a certain \emph{critical frequency} $\nu_0$, there will be no
 photoemission, because the energy $h\nu$ is insufficient to ``beat''
@@ -342,8 +342,8 @@ that the wave-like and particle-like aspects of light are intimately associated,
 and that the best description of radiation is a \emph{dual} one.
 \subsection{de-Broglie Hypothesis}
 \begin{align*}
-    E=h\nu &\qquad E=mc^2\\
-    h\nu=mc^2 \iff h\frac{c}{\lambda} &= mc^2 \iff \lambda = \frac{h}{mc}\\
+	E=h\nu                            & \qquad E=mc^2                      \\
+	h\nu=mc^2 \iff h\frac{c}{\lambda} & = mc^2 \iff \lambda = \frac{h}{mc} \\
 \end{align*}
 Analogally, for a particle moving at speed other than $c$ we have $\lambda = \frac{h}{mv}$
 
@@ -355,15 +355,15 @@ relation:
 $$\lambda = \frac{h}{p}$$
 \subsection{Electrons}
 \begin{itemize}
-    \item Particle-like Behavior
-          \begin{itemize}
-              \item The determination of the mass of the electron attributed to
-                    it a particle-like characteristic.
-          \end{itemize}
-    \item Wave-like Behavior
-          \begin{itemize}
-              \item Electrons suffer difraction when interferring with crystals.
-          \end{itemize}
+	\item Particle-like Behavior
+	      \begin{itemize}
+	      	\item The determination of the mass of the electron attributed to
+	      	      it a particle-like characteristic.
+	      \end{itemize}
+	\item Wave-like Behavior
+	      \begin{itemize}
+	      	\item Electrons suffer difraction when interferring with crystals.
+	      \end{itemize}
 \end{itemize}
 \subsection{Heisenberg's Uncertainty Principle}
 A direct consequence of the dualistic behavior is the impossibily of measuring
@@ -372,12 +372,12 @@ must, at the quantum level, abandon the concept of trajectory since, to describe
 it we must know at any given time the position and momentum of a given particle.
 \subsection{Schrödinger's Equation}
 \begin{figure}[H]
-    \centering
-    \begin{align*}
-        E = E_p + E_k \iff E\psi = (E_p + E_k)\psi \\
-        \iff -\frac{h^2}{8\pi^2 m}\frac{d^2\psi(x)}{dx^2} + E_p\psi(x) = E_{\psi(x)}
-    \end{align*}
-    \caption*{Time independent Schrödinger equation on 1 dimension, describing any system that exibits particle-wave behavior}
+	\centering
+	\begin{align*}
+		E = E_p + E_k \iff E\psi = (E_p + E_k)\psi                                   \\
+		\iff -\frac{h^2}{8\pi^2 m}\frac{d^2\psi(x)}{dx^2} + E_p\psi(x) = E_{\psi(x)}
+	\end{align*}
+	\caption*{Time independent Schrödinger equation on 1 dimension, describing any system that exibits particle-wave behavior}
 \end{figure}
 
 Where $\psi$ is the wave function.
@@ -393,191 +393,210 @@ of finding said particle at a point $x$.
 \subsection{Particle in a Box}
 Imagine a particle (electron, photon, and so on) confined to a region in space,
 unidimensional and of length $a$. It is limited (confined) by two ``walls'' of
-infinite potential
+infinite potential, or an energy well.
 
 TODO:\@ Get the 0 to show on the x axis label.
 TODO:\@ Align this to the right.
 \begin{figure}[H]
-    \begin{tikzpicture}
-    \begin{axis}
-    [
-      axis lines=middle,
-      xticklabels={,,},
-      ymin=0,
-      ymax=10,
-      yticklabels={,,},
-      ylabel={$V(x)$},
-      xtick={0,1,...,10},
-      xticklabels={0,,,,,,,,,,$a$},
-      xmin=0,
-      xmax=10,
-      xlabel={$x$},
-    ]
-    \end{axis}
-    \begin{axis}
-    [
-      xshift=0cm,
-      axis lines=middle,
-      xtick={0,-1,...,-10},
-      xticklabels={,,},
-      ymin=0,
-      ymax=10,
-      yticklabels={,,},
-      xmin=-10,
-      xmax=0,
-    ]
-    \end{axis}
-    \end{tikzpicture}
-    \caption{Box with infinite potential constraints. $\forall x\le 0 \vee x\ge a : E_p=\infty$, also $\forall 0<x<a : E_p=0 $}
+	\begin{tikzpicture}
+		\begin{axis}
+			[
+			axis lines=middle,
+			xticklabels={,,},
+			ymin=0,
+			ymax=10,
+			yticklabels={,,},
+			ylabel={$V(x)$},
+			xtick={0,1,...,10},
+			xticklabels={0,,,,,,,,,,$a$},
+			xmin=0,
+			xmax=10,
+			xlabel={$x$},
+			]
+		\end{axis}
+		\begin{axis}
+			[
+			xshift=0cm,
+			axis lines=middle,
+			xtick={0,-1,...,-10},
+			xticklabels={,,},
+			ymin=0,
+			ymax=10,
+			yticklabels={,,},
+			xmin=-10,
+			xmax=0,
+			]
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Energy well. $\forall x\le 0 \vee x\ge a : E_p=\infty$, also $\forall 0<x<a : E_p=0 $}
 \end{figure}
 \begin{equation*}
-    E_n=\frac{n^2h^2}{8mL^2}
+	E_n=\frac{n^2h^2}{8mL^2}
 \end{equation*}
 The index $n$ on the energy is marking that the different possible energy levels
 for the system depend only on an integer $n$. Conversely, the varying wave
 functions depend only on the quantum number $n$.
 \begin{equation*}
-    \psi_n(x) = \sqrt{\frac{2}{L}}\sin{\frac{n\pi x}{L}}
+	\psi_n(x) = \sqrt{\frac{2}{L}}\sin{\frac{n\pi x}{L}}
 \end{equation*}
 We now have a set of tuples $(\psi_n(x), E_n)$ which are solutions to
 Schrödinger's equation, when applied to a particle of mass $m$ constrained in an
-infinite potential box.
+energy well.
+TODO:\@ The following graphics are kind of a mess. Fix them.
 \begin{figure*}
 
-    \begin{subfigure}[b]{0.5\textwidth}
-    \begin{tikzpicture}
-    \begin{axis}
-    [
-      axis lines=middle,
-      axis line style={->},
-      xmin=0,
-      xmax=5,
-      xticklabels={,,},
-      ymin=0,
-      ymax=10,
-      ytick={0,1,...,9},
-      yticklabels={,$E_1$,,,$E_2$,,$E_3$,,,$E_4$},
-      ylabel near ticks,
-    ]
-    \addplot[blue, very thick,samples=200,domain=0:5] {1};
-    \addplot[red, very thick,samples=200,domain=0:5] {4};
-    \addplot[green, very thick,samples=200,domain=0:5] {6};
-    \addplot[black, very thick,samples=200,domain=0:5] {9};
-    \end{axis}
-    \begin{axis}
-    [
-      xshift=0cm,
-      axis lines=middle,
-      xticklabels={,,},
-      ymin=0,
-      ymax=10,
-      yticklabels={,,},
-      xmin=-5,
-      xmax=0,
-    ]
-    \end{axis}
-    \end{tikzpicture}
-    \caption{Three first energy levels allowed for a particle in a potential box}
-\end{subfigure}
-\begin{subfigure}[b]{0.5\textwidth}
-    \begin{tikzpicture}
-        \begin{axis}
-            [
-            axis lines=middle,
-            axis line style={-},
-            ymin=-1, ymax=1,
-            xmin=0, xmax = pi,
-            ylabel={$\psi_1(x)$},
-            ytick={-1,-0.5,...,0.5,1},
-            yticklabels={,,},
-            xticklabels={,,},
-            ylabel near ticks,
-            ]
-            \addplot[red, very thick,samples=200,domain=0:8*pi] {(sin(deg(x+pi))/2)*-1};
-        \end{axis}
-        \begin{axis}
-            [
-            yshift=-3cm,
-            axis lines=middle,
-            axis line style={-},
-            ymin=-1, ymax=1,
-            xmin=0, xmax = 2*pi,
-            ylabel={$\psi_2(x)$},
-            ytick={-1,-0.5,...,0.5,1},
-            yticklabels={,,},
-            xticklabels={,,},
-            ylabel near ticks,
-            ]
-            \addplot[green, very thick,samples=200,domain=0:8*pi] {(sin(deg(x+pi))/2)*-1};
-        \end{axis}
-        \begin{axis}
-            [
-            yshift=-6cm,
-            axis lines=middle,
-            axis line style={-},
-            ymin=-1, ymax=1,
-            xmin=0, xmax = 3*pi,
-            ylabel={$\psi_3(x)$},
-            ytick={-1,-0.5,...,0.5,1},
-            yticklabels={,,},
-            ylabel near ticks,
-            ]
-            \addplot[blue, very thick,samples=200,domain=0:8*pi] {(sin(deg(x+pi))/2)*-1};
-        \end{axis}
-    \end{tikzpicture}
-    \caption{Three first wave functions for a given system}
-\end{subfigure}
-\newline
-\begin{center}
-    \begin{subfigure}[b]{0.5\textwidth}
-        \begin{tikzpicture}
-            \begin{axis}
-                [
-                axis lines=middle,
-                axis line style={-},
-                ymin=-1, ymax=1,
-                xmin=0, xmax = pi,
-                ylabel={$P_1(x)$},
-                ytick={-1,-0.5,...,0.5,1},
-                yticklabels={,,},
-                xticklabels={,,},
-                ylabel near ticks,
-                ]
-                \addplot[red, very thick,samples=200,domain=0:8*pi] {abs((sin(deg(x+pi))/2)*-1)};
-            \end{axis}
-            \begin{axis}
-                [
-                yshift=-3cm,
-                axis lines=middle,
-                axis line style={-},
-                ymin=-1, ymax=1,
-                xmin=0, xmax = 2*pi,
-                ylabel={$P_2(x)$},
-                ytick={-1,-0.5,...,0.5,1},
-                yticklabels={,,},
-                xticklabels={,,},
-                ylabel near ticks,
-                ]
-                \addplot[green, very thick,samples=200,domain=0:8*pi] {abs((sin(deg(x+pi))/2)*-1)};
-            \end{axis}
-            \begin{axis}
-                [
-                yshift=-6cm,
-                axis lines=middle,
-                axis line style={-},
-                ymin=-1, ymax=1,
-                xmin=0, xmax = 3*pi,
-                ylabel={$P_3(x)$},
-                ytick={-1,-0.5,...,0.5,1},
-                yticklabels={,,},
-                xticklabels={,,},
-                ylabel near ticks,
-                ]
-                \addplot[blue, very thick,samples=200,domain=0:8*pi] {abs((sin(deg(x+pi))/2)*-1)};
-            \end{axis}
-        \end{tikzpicture}
-        \caption{Probability density}
-    \end{subfigure}
-\end{center}
+	\begin{subfigure}[b]{0.5\textwidth}
+		\begin{tikzpicture}
+			\begin{axis}
+				[
+				axis lines=middle,
+				axis line style={->},
+				xmin=0,
+				xmax=5,
+				xticklabels={,,},
+				ymin=0,
+				ymax=10,
+				ytick={0,1,...,9},
+				yticklabels={,$E_1$,,,$E_2$,,$E_3$,,,$E_4$},
+				ylabel near ticks,
+				]
+				\addplot[blue, very thick,samples=200,domain=0:5] {1};
+				\addplot[red, very thick,samples=200,domain=0:5] {4};
+				\addplot[green, very thick,samples=200,domain=0:5] {6};
+				\addplot[black, very thick,samples=200,domain=0:5] {9};
+			\end{axis}
+			\begin{axis}
+				[
+				xshift=0cm,
+				axis lines=middle,
+				xticklabels={,,},
+				ymin=0,
+				ymax=10,
+				yticklabels={,,},
+				xmin=-5,
+				xmax=0,
+				]
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Three first energy levels allowed for a particle in a potential box}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.5\textwidth}
+		\begin{tikzpicture}
+			\begin{axis}
+				[
+				axis lines=middle,
+				axis line style={-},
+				ymin=-1, ymax=1,
+				xmin=0, xmax = pi,
+				ylabel={$\psi_1(x)$},
+				ytick={-1,-0.5,...,0.5,1},
+				yticklabels={,,},
+				xticklabels={,,},
+				ylabel near ticks,
+				]
+				\addplot[red, very thick,samples=200,domain=0:8*pi] {(sin(deg(x+pi))/2)*-1};
+			\end{axis}
+			\begin{axis}
+				[
+				yshift=-3cm,
+				axis lines=middle,
+				axis line style={-},
+				ymin=-1, ymax=1,
+				xmin=0, xmax = 2*pi,
+				ylabel={$\psi_2(x)$},
+				ytick={-1,-0.5,...,0.5,1},
+				yticklabels={,,},
+				xticklabels={,,},
+				ylabel near ticks,
+				]
+				\addplot[green, very thick,samples=200,domain=0:8*pi] {(sin(deg(x+pi))/2)*-1};
+			\end{axis}
+			\begin{axis}
+				[
+				yshift=-6cm,
+				axis lines=middle,
+				axis line style={-},
+				ymin=-1, ymax=1,
+				xmin=0, xmax = 3*pi,
+				ylabel={$\psi_3(x)$},
+				ytick={-1,-0.5,...,0.5,1},
+				yticklabels={,,},
+				ylabel near ticks,
+				]
+				\addplot[blue, very thick,samples=200,domain=0:8*pi] {(sin(deg(x+pi))/2)*-1};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Three first wave functions for a given system}
+	\end{subfigure}
+	\newline
+	\begin{center}
+		\begin{subfigure}[b]{0.5\textwidth}
+			\begin{tikzpicture}
+				\begin{axis}
+					[
+					axis lines=middle,
+					axis line style={-},
+					ymin=-1, ymax=1,
+					xmin=0, xmax = pi,
+					ylabel={$P_1(x)$},
+					ytick={-1,-0.5,...,0.5,1},
+					yticklabels={,,},
+					xticklabels={,,},
+					ylabel near ticks,
+					]
+					\addplot[red, very thick,samples=200,domain=0:8*pi] {abs((sin(deg(x+pi))/2)*-1)};
+				\end{axis}
+				\begin{axis}
+					[
+					yshift=-3cm,
+					axis lines=middle,
+					axis line style={-},
+					ymin=-1, ymax=1,
+					xmin=0, xmax = 2*pi,
+					ylabel={$P_2(x)$},
+					ytick={-1,-0.5,...,0.5,1},
+					yticklabels={,,},
+					xticklabels={,,},
+					ylabel near ticks,
+					]
+					\addplot[green, very thick,samples=200,domain=0:8*pi] {abs((sin(deg(x+pi))/2)*-1)};
+				\end{axis}
+				\begin{axis}
+					[
+					yshift=-6cm,
+					axis lines=middle,
+					axis line style={-},
+					ymin=-1, ymax=1,
+					xmin=0, xmax = 3*pi,
+					ylabel={$P_3(x)$},
+					ytick={-1,-0.5,...,0.5,1},
+					yticklabels={,,},
+					xticklabels={,,},
+					ylabel near ticks,
+					]
+					\addplot[blue, very thick,samples=200,domain=0:8*pi] {abs((sin(deg(x+pi))/2)*-1)};
+				\end{axis}
+			\end{tikzpicture}
+			\caption{Probability density}
+		\end{subfigure}
+	\end{center}
 \end{figure*}
+\newpage
+\begin{itemize}
+	\item The wave function has the number of nodes given by $n-1$, excluding the wall nodes.
+	\item Energy is proportional to the number of nodes.
+	\item The above statements are true without loss of generality for any system characterized by one quantum number.
+\end{itemize}
+\paragraph{Example}
+TODO:\@ Insert molecule at the bottom of page 8.
+
+Using the particle in an energy well model, calculate the energy of the first energy
+level, given that $d_{\text{c-c}}=1.41\si{\angstrom}$.
+\begin{align*}
+	E_n = \frac{n^2h^2}{8m_{e^{-}}L^2} &   & L=4\times d_{\text{c-c}}=5.64\si{\angstrom}
+\end{align*}
+\section{Quantum Model of Atoms}
+\subsection{Hidrogenoid Atoms}
+
+
 \end{document}
