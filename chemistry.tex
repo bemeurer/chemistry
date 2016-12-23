@@ -237,26 +237,67 @@ REVIEW NEEDED
 
 The interference between two waves travelling at the same speed, but in opposing
 directions creates a \emph{stationary wave} --- a wave in which, throughout
-time, the nodes and peaks (TODO:\@ Peaks isn't the word I want, I mean the part
-which is either a peak or valley) stay at the same point in space
-
-TODO:\@ Graph for ``wave in a box'' stationary wave.
+time, the nodes, crests, ans troughs stay at the same point in space.
 
 The existence of boundary conditions, beyond causing the phenomenon to be
 stationary, has another important consequence.The wave functions that describe
 it [the wave] cannot be ordinary. It's wavelength depends on imposed physical
 constraints (in this case a distance between points in space) and differ
 from each other through an integer.
-\begin{align*}
-    \lambda = \frac{2L}{n} \quad n=1,2,3,\ldots \\
-\end{align*}
-TODO:\@ I forgot how to properly align these, so I did ``\quad'' for the time
-beign.
+\[
+    \lambda = \frac{2L}{n} \qquad n=1,2,3,\ldots \\
+\]
 
 With this we can see that the solutions are discrete, as opposed to being continuous, and the
  factor distinguishing them is the integer $n$, which we call a quatum number.
+\begin{figure}[H]
+    \begin{tikzpicture}
+    \begin{axis}
+    [
+      axis lines=middle,
+      axis line style={->},
+      xmin=0,
+      xmax=4*pi,
+      xticklabels={,,},
+      ymin=-1,
+      ymax=1,
+      yticklabels={,,},
+    ]
+    \addplot[black, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
+    \end{axis}
+    \begin{axis}
+    [
+      yshift=2cm,
+      axis lines=middle,
+      axis line style={->},
+      xmin=-0,
+      xmax=4*pi,
+      xticklabels={,,},
+      xlabel={$\lambda = \frac{2L}{3}$}
+      ymin=-1,
+      ymax=1,
+      yticklabels={,,},
+    ]
+    \addplot[black, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
+    \end{axis}
+    \begin{axis}
+    [
+      yshift=-2cm,
+      axis lines=middle,
+      axis line style={->},
+      xmin=-0,
+      xmax=4*pi,
+      xticklabels={,,},
+      ymin=-1,
+      ymax=1,
+      yticklabels={,,},
+    ]
+    \addplot[black, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
+    \end{axis}
+    \end{tikzpicture}
+\end{figure}
 
-TODO:\@ Add graph showing waves with different $n$'s
+TODO:\@ Fix this. No idea how to make it work as intended.
 \subsection{Electromagnetic Radiation}
 The propagation of electromagnetic radiation is a wave-like movement, and with
 it we associate a period $T$, a frequency $\nu$, and a wavelength $\lambda$.
@@ -281,7 +322,6 @@ From this experiment we could verify that:
               E_c &= \frac{1}{2}\si{\metre\newton}^2 = E_{\text{photon}} - W \\
               E_c &= h\nu - W \\
           \end{align*}
-          TODO:\@ Properly align these.\\
 \end{enumerate}
 Below a certain \emph{critical frequency} $\nu_0$, there will be no
 photoemission, because the energy $h\nu$ is insufficient to ``beat''
