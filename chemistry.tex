@@ -8,6 +8,7 @@
 \usepackage{pgfplots}
 \usepackage{graphicx}
 \usepackage{wrapfig}
+\usepackage{subcaption}
 \usepackage{float}
 \usepackage{siunitx}
 \graphicspath{ {Images/} }
@@ -118,17 +119,119 @@ of the mean through which the wave travels.
 Where $E$ is the energy of a photon or electron, $h$ is Planck's constant
 ($h = 6.62607\times 10^{-34}\si{\joule\second}$)
 \subsection{Electromagnetic Spectrum}
-TODO:\@ Add graphics here. It shows the different radiations from
-microwave to gamma rays, there's also an image showing the combinations of RGB
-lights, and it also mentions the largest and smallest (red, violet respectively)
-frequencies that the human eye can see.
+TODO:\@ Add venn-diagram of light combinations. Use Tikz.
+\begin{figure}[H]
+    \centering
+\includegraphics[scale=0.65]{radiations}
+\end{figure}
 \subsection{Interference}
 Interference is a phenomenom associated with the wave-like behavior of
 electromagnetic radiation. The interference between two waves travelling through
 the same region in space yields another wave, which is the algebric sum of the
 two interferring waves.
 
-TODO:\@ Graphs for constructive and destructive interferrence.
+TODO:\@ Fix double Y axis on these
+
+\begin{figure}[H]
+    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{tikzpicture}
+    \begin{axis}
+    [
+      axis lines=middle,
+      axis line style={->},
+      xmin=0,
+      xmax=4*pi,
+      xticklabels={,,},
+      ymin=-1,
+      ymax=1,
+      yticklabels={,,},
+    ]
+    \addplot[red, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
+    \end{axis}
+    \begin{axis}
+    [
+      yshift=-2cm,
+      axis lines=middle,
+      axis line style={->},
+      xmin=-0,
+      xmax=4*pi,
+      xticklabels={,,},
+      ymin=-1,
+      ymax=1,
+      yticklabels={,,},
+    ]
+    \addplot[blue, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
+    \end{axis}
+    \end{tikzpicture}
+
+    \begin{tikzpicture}
+    \begin{axis}
+    [
+      axis lines=middle,
+      axis line style={->},
+      xmin=0,
+      xmax=4*pi,
+      xticklabels={,,},
+      ymin=-1.1,
+      ymax=1.1,
+      yticklabels={,,},
+    ]
+    \addplot[purple, very thick,samples=200,domain=0:4*pi] {(sin(deg(x)))};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Constructive interference}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{tikzpicture}
+    \begin{axis}
+    [
+      axis lines=middle,
+      axis line style={->},
+      xmin=0,
+      xmax=4*pi,
+      xticklabels={,,},
+      ymin=-1,
+      ymax=1,
+      yticklabels={,,},
+    ]
+    \addplot[red, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
+    \end{axis}
+    \begin{axis}
+    [
+      yshift=-2cm,
+      axis lines=middle,
+      axis line style={->},
+      xmin=-0,
+      xmax=4*pi,
+      xticklabels={,,},
+      ymin=-1,
+      ymax=1,
+      yticklabels={,,},
+    ]
+    \addplot[blue, very thick,samples=200,domain=0:4*pi] {(sin(deg(x+pi))/2)};
+    \end{axis}
+    \end{tikzpicture}
+
+    \begin{tikzpicture}
+    \begin{axis}
+    [
+      axis lines=middle,
+      axis line style={->},
+      xmin=0,
+      xmax=4*pi,
+      xticklabels={,,},
+      ymin=-1.1,
+      ymax=1.1,
+      yticklabels={,,},
+    ]
+    \addplot[purple, very thick,samples=200,domain=0:4*pi] {0};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Destructive interference}
+    \end{subfigure}
+\end{figure}
+
 \subsection{Stationary Waves}
 REVIEW NEEDED
 
