@@ -38,7 +38,7 @@
                 xmin=-0.2,
                 xmax=2*pi+0.2,
                 ymin=-1,
-                no marks, grid,
+                no marks,grid,
                 xticklabels={0, $\frac{\pi}{4}$,  $\frac{\pi}{2}$,
                              $\frac{3\pi}{4}$, $\pi$,$\frac{5\pi}{4}$,
                              $\frac{3\pi}{2}$, $\frac{7\pi}{2}$, 2$\pi$},
@@ -216,6 +216,7 @@ TODO:\@ Fix double Y axis on these
     \begin{tikzpicture}
     \begin{axis}
     [
+      samples=200
       axis lines=middle,
       axis line style={->},
       xmin=0,
@@ -340,8 +341,11 @@ description of light is the only one compatible with the results. We can now see
 that the wave-like and particle-like aspects of light are intimately associated,
 and that the best description of radiation is a \emph{dual} one.
 \subsection{de-Broglie Hypothesis}
-TODO:\@ Insert all the formulas at the end of page 5. Take care of formatting
-them in a sensible way.
+\begin{align*}
+    E=h\nu &\qquad E=mc^2\\
+    h\nu=mc^2 \iff h\frac{c}{\lambda} &= mc^2 \iff \lambda = \frac{h}{mc}\\
+\end{align*}
+Analogally, for a particle moving at speed other than $c$ we have $\lambda = \frac{h}{mv}$
 
 de-Broglie, with the dualistic properties of radiation in mind,
 proposed that this type of behavior, verified for electromagnetic radiation,
@@ -381,5 +385,199 @@ Where $\psi$ is the wave function.
 
 The wave function $\psi(x)$ does not have any physical meaning at first, but
 it's square $\psi{(x)}^2$ is proportional to the density of particles at the point
-$x$. If $\psi(x)$ represents a single particle, it's square will be
+$x$.
+
+If $\psi(x)$ represents a single particle, it's square will be \emph{probability density}
+of finding said particle at a point $x$.
+
+\subsection{Particle in a Box}
+Imagine a particle (electron, photon, and so on) confined to a region in space,
+unidimensional and of length $a$. It is limited (confined) by two ``walls'' of
+infinite potential
+
+TODO:\@ Get the 0 to show on the x axis label.
+TODO:\@ Align this to the right.
+\begin{figure}[H]
+    \begin{tikzpicture}
+    \begin{axis}
+    [
+      axis lines=middle,
+      xticklabels={,,},
+      ymin=0,
+      ymax=10,
+      yticklabels={,,},
+      ylabel={$V(x)$},
+      xtick={0,1,...,10},
+      xticklabels={0,,,,,,,,,,$a$},
+      xmin=0,
+      xmax=10,
+      xlabel={$x$},
+    ]
+    \end{axis}
+    \begin{axis}
+    [
+      xshift=0cm,
+      axis lines=middle,
+      xtick={0,-1,...,-10},
+      xticklabels={,,},
+      ymin=0,
+      ymax=10,
+      yticklabels={,,},
+      xmin=-10,
+      xmax=0,
+    ]
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Box with infinite potential constraints. $\forall x\le 0 \vee x\ge a : E_p=\infty$, also $\forall 0<x<a : E_p=0 $}
+\end{figure}
+\begin{equation*}
+    E_n=\frac{n^2h^2}{8mL^2}
+\end{equation*}
+The index $n$ on the energy is marking that the different possible energy levels
+for the system depend only on an integer $n$. Conversely, the varying wave
+functions depend only on the quantum number $n$.
+\begin{equation*}
+    \psi_n(x) = \sqrt{\frac{2}{L}}\sin{\frac{n\pi x}{L}}
+\end{equation*}
+We now have a set of tuples $(\psi_n(x), E_n)$ which are solutions to
+Schrödinger's equation, when applied to a particle of mass $m$ constrained in an
+infinite potential box.
+\begin{figure*}
+
+    \begin{subfigure}[b]{0.5\textwidth}
+    \begin{tikzpicture}
+    \begin{axis}
+    [
+      axis lines=middle,
+      axis line style={->},
+      xmin=0,
+      xmax=5,
+      xticklabels={,,},
+      ymin=0,
+      ymax=10,
+      ytick={0,1,...,9},
+      yticklabels={,$E_1$,,,$E_2$,,$E_3$,,,$E_4$},
+      ylabel near ticks,
+    ]
+    \addplot[blue, very thick,samples=200,domain=0:5] {1};
+    \addplot[red, very thick,samples=200,domain=0:5] {4};
+    \addplot[green, very thick,samples=200,domain=0:5] {6};
+    \addplot[black, very thick,samples=200,domain=0:5] {9};
+    \end{axis}
+    \begin{axis}
+    [
+      xshift=0cm,
+      axis lines=middle,
+      xticklabels={,,},
+      ymin=0,
+      ymax=10,
+      yticklabels={,,},
+      xmin=-5,
+      xmax=0,
+    ]
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Three first energy levels allowed for a particle in a potential box}
+\end{subfigure}
+\begin{subfigure}[b]{0.5\textwidth}
+    \begin{tikzpicture}
+        \begin{axis}
+            [
+            axis lines=middle,
+            axis line style={-},
+            ymin=-1, ymax=1,
+            xmin=0, xmax = pi,
+            ylabel={$\psi_1(x)$},
+            ytick={-1,-0.5,...,0.5,1},
+            yticklabels={,,},
+            xticklabels={,,},
+            ylabel near ticks,
+            ]
+            \addplot[red, very thick,samples=200,domain=0:8*pi] {(sin(deg(x+pi))/2)*-1};
+        \end{axis}
+        \begin{axis}
+            [
+            yshift=-3cm,
+            axis lines=middle,
+            axis line style={-},
+            ymin=-1, ymax=1,
+            xmin=0, xmax = 2*pi,
+            ylabel={$\psi_2(x)$},
+            ytick={-1,-0.5,...,0.5,1},
+            yticklabels={,,},
+            xticklabels={,,},
+            ylabel near ticks,
+            ]
+            \addplot[green, very thick,samples=200,domain=0:8*pi] {(sin(deg(x+pi))/2)*-1};
+        \end{axis}
+        \begin{axis}
+            [
+            yshift=-6cm,
+            axis lines=middle,
+            axis line style={-},
+            ymin=-1, ymax=1,
+            xmin=0, xmax = 3*pi,
+            ylabel={$\psi_3(x)$},
+            ytick={-1,-0.5,...,0.5,1},
+            yticklabels={,,},
+            ylabel near ticks,
+            ]
+            \addplot[blue, very thick,samples=200,domain=0:8*pi] {(sin(deg(x+pi))/2)*-1};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Three first wave functions for a given system}
+\end{subfigure}
+\newline
+\begin{center}
+    \begin{subfigure}[b]{0.5\textwidth}
+        \begin{tikzpicture}
+            \begin{axis}
+                [
+                axis lines=middle,
+                axis line style={-},
+                ymin=-1, ymax=1,
+                xmin=0, xmax = pi,
+                ylabel={$P_1(x)$},
+                ytick={-1,-0.5,...,0.5,1},
+                yticklabels={,,},
+                xticklabels={,,},
+                ylabel near ticks,
+                ]
+                \addplot[red, very thick,samples=200,domain=0:8*pi] {abs((sin(deg(x+pi))/2)*-1)};
+            \end{axis}
+            \begin{axis}
+                [
+                yshift=-3cm,
+                axis lines=middle,
+                axis line style={-},
+                ymin=-1, ymax=1,
+                xmin=0, xmax = 2*pi,
+                ylabel={$P_2(x)$},
+                ytick={-1,-0.5,...,0.5,1},
+                yticklabels={,,},
+                xticklabels={,,},
+                ylabel near ticks,
+                ]
+                \addplot[green, very thick,samples=200,domain=0:8*pi] {abs((sin(deg(x+pi))/2)*-1)};
+            \end{axis}
+            \begin{axis}
+                [
+                yshift=-6cm,
+                axis lines=middle,
+                axis line style={-},
+                ymin=-1, ymax=1,
+                xmin=0, xmax = 3*pi,
+                ylabel={$P_3(x)$},
+                ytick={-1,-0.5,...,0.5,1},
+                yticklabels={,,},
+                xticklabels={,,},
+                ylabel near ticks,
+                ]
+                \addplot[blue, very thick,samples=200,domain=0:8*pi] {abs((sin(deg(x+pi))/2)*-1)};
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Probability density}
+    \end{subfigure}
+\end{center}
+\end{figure*}
 \end{document}
