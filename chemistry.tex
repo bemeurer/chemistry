@@ -34,6 +34,9 @@
               [
                 domain=0:2*pi,
                 samples=200,
+                xmin=-0.2,
+                xmax=2*pi+0.2,
+                ymin=-1,
                 no marks, grid,
                 xticklabels={0, $\frac{\pi}{4}$,  $\frac{\pi}{2}$,
                              $\frac{3\pi}{4}$, $\pi$,$\frac{5\pi}{4}$,
@@ -62,20 +65,49 @@
 
     \item Period ($T$) --- Duration of a cycle $V=\frac{1}{T}$
 
-    \item Wave Number --- Number of complete cycles per unit of time
+    \item Wavenumber --- Number of complete cycles per unit of time
           \begin{align*}
               \bar{\nu} = \frac{1}{\lambda}
           \end{align*}
-          TODO:\@ Is the name of this right?
     \item Propagation Speed --- Speed with which the wave propagates in a given
           direction.
           \begin{align*}
                 \nu = \frac{c}{\lambda} \\
                 \lambda = cT
           \end{align*}
-          TODO:\@ Add graphics for the wave, showing with amplitude as the Y axis,
-          time as the X axis, and pointing to the nodes, peaks, and minimuns or
-          whatever their name is in english.
+          \begin{center}
+              \begin{tikzpicture}
+              \begin{axis}
+              [
+                axis lines=middle,
+                axis line style={->},
+                xmin=-0.2,
+                xmax=4*pi+0.2,
+                xticklabels={,,},
+                xlabel={T($\si{\second}$)},
+                ymin=-1.5,
+                ymax=1.5,
+                yticklabels={,,},
+                ylabel={Amplitude},
+                ylabel near ticks,
+              ]
+              \addplot[blue, very thick,samples=200,domain=0:4*pi] {(sin(deg(x)))/1.5};
+              \node (crest) at (1.5*pi, 1.25) {Crest};
+              \node (trough) at (2.5*pi, -1.25) {Trough};
+              \node (node) at (0.5*pi, -1) {Node};
+              \draw[->] (crest) -- (0.5*pi, 1/1.5);
+              \draw[->] (crest) -- (2.5*pi, 1/1.5);
+              \draw[->] (trough) -- (1.5*pi, -1/1.5);
+              \draw[->] (trough) -- (3.5*pi, -1/1.5);
+              \draw[->] (node) -- (0,0);
+              \draw[->] (node) -- (pi,0);
+              \draw[->] (node) -- (2*pi,0);
+              \draw[->] (node) -- (3*pi,0);
+              \draw[->] (node) -- (4*pi,0);
+              \end{axis}
+              \end{tikzpicture}
+          \end{center}
+
 \end{itemize}
 Note that the frequency, and the period are, unlike the wavelegth, independent
 of the mean through which the wave travels.
