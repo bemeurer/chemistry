@@ -163,107 +163,69 @@ electromagnetic radiation. The interference between two waves travelling through
 the same region in space yields another wave, which is the algebric sum of the
 two interferring waves.
 
-TODO:\@ Fix double Y axis on these
+TODO:\@ Fix position of this on the document
 
-\begin{figure}[H]
-	\begin{subfigure}[b]{0.4\textwidth}
-		\begin{tikzpicture}
-			\begin{axis}
-				[
-				axis lines=middle,
-				axis line style={->},
-				xmin=0,
-				xmax=4*pi,
-				xticklabels={,,},
-				ymin=-1,
-				ymax=1,
-				yticklabels={,,},
-				]
-				\addplot[red, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
-			\end{axis}
-			\begin{axis}
-				[
-				yshift=-2cm,
-				axis lines=middle,
-				axis line style={->},
-				xmin=-0,
-				xmax=4*pi,
-				xticklabels={,,},
-				ymin=-1,
-				ymax=1,
-				yticklabels={,,},
-				]
-				\addplot[blue, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
-			\end{axis}
-		\end{tikzpicture}
+\begin{figure}[htb]
+\pgfplotsset{
+axis lines=middle,
+axis line style={->},
+xmin=0,
+xmax=4.2*pi,
+xticklabels=empty,
+xtick=\empty,
+ymin=-1,
+ymax=1,
+yticklabels=empty,
+ytick=\empty,
+samples=200,
+domain=0:4*pi,
+every axis plot post/.append style={very thick},
+clip=false
+		 }% end of common axis set
 
-		\begin{tikzpicture}
-			\begin{axis}
-				[
-				axis lines=middle,
-				axis line style={->},
-				xmin=0,
-				xmax=4*pi,
-				xticklabels={,,},
-				ymin=-1.1,
-				ymax=1.1,
-				yticklabels={,,},
-				]
-				\addplot[purple, very thick,samples=200,domain=0:4*pi] {(sin(deg(x)))};
-			\end{axis}
-		\end{tikzpicture}
-		\caption{Constructive interference}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.4\textwidth}
-		\begin{tikzpicture}
-			\begin{axis}
-				[
-				axis lines=middle,
-				axis line style={->},
-				xmin=0,
-				xmax=4*pi,
-				xticklabels={,,},
-				ymin=-1,
-				ymax=1,
-				yticklabels={,,},
-				]
-				\addplot[red, very thick,samples=200,domain=0:4*pi] {(sin(deg(x))/2)};
-			\end{axis}
-			\begin{axis}
-				[
-				yshift=-2cm,
-				axis lines=middle,
-				axis line style={->},
-				xmin=-0,
-				xmax=4*pi,
-				xticklabels={,,},
-				ymin=-1,
-				ymax=1,
-				yticklabels={,,},
-				]
-				\addplot[blue, very thick,samples=200,domain=0:4*pi] {(sin(deg(x+pi))/2)};
-			\end{axis}
-		\end{tikzpicture}
+\begin{subfigure}[b]{0.4\textwidth}
+\begin{tikzpicture}
+\begin{axis}% 1. plot
+[yscale=0.5]
+\addplot[red] {(sin(deg(x)))};
+\node at (2*pi,-1.05) {\huge$+$};
+\end{axis}
+\begin{axis}% 2. plot
+[ yshift=-3cm, yscale=0.5]
+\addplot[blue] {(sin(deg(x)))};
+\node at (2*pi,-1.05) {\huge$=$};
+\end{axis}
+\end{tikzpicture}
 
-		\begin{tikzpicture}
-			\begin{axis}
-				[
-				samples=200,
-				axis lines=middle,
-				axis line style={->},
-				xmin=0,
-				xmax=4*pi,
-				xticklabels={,,},
-				ymin=-1.1,
-				ymax=1.1,
-				yticklabels={,,},
-				]
-				\addplot[purple, very thick,samples=200,domain=0:4*pi] {0};
-			\end{axis}
-		\end{tikzpicture}
-		\caption{Destructive interference}
-	\end{subfigure}
+\begin{tikzpicture}
+\begin{axis}% 3. plot
+\addplot[purple] {(sin(deg(x)))};
+\end{axis}
+\end{tikzpicture}
+\caption{Constructive interference}
+\end{subfigure}
+\hfill %%%% %%%% %%%% second image
+\begin{subfigure}[b]{0.4\textwidth}
+\begin{tikzpicture}
+\begin{axis}% 1. plot
+[yscale=0.5]
+\addplot[red] {(sin(deg(x)))};
+\node at (2*pi,-1.05) {\huge$+$};
+\end{axis}
+\begin{axis}% 2. plot
+[ yshift=-3cm,yscale=0.5]
+\addplot[blue] {(sin(deg(x+pi)))};
+\node at (2*pi,-1.05) {\huge$=$};
+\end{axis}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{axis}% 3. plot
+\addplot[purple] {0};
+\end{axis}
+\end{tikzpicture}
+\caption{Destructive interference}
+\end{subfigure}
 \end{figure}
 
 \subsection{Stationary Waves}
