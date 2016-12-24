@@ -13,6 +13,7 @@
 \usepackage{siunitx}
 \graphicspath{ {Images/} }
 \pgfplotsset{width=8cm,compat=1.14}
+\usetikzlibrary{backgrounds,shadows,fit,positioning}
 
 
 \begin{document}
@@ -124,6 +125,38 @@ TODO:\@ Add venn-diagram of light combinations. Use Tikz.
 	\centering
 	\includegraphics[scale=0.65]{radiations}
 \end{figure}
+\begin{figure}
+\begin{tikzpicture}[line width=0]
+  \foreach \angle/\col in {90/red,210/blue,330/green}{
+    \fill[fill=\col] (\angle:.75) circle (1cm);
+  }
+  \foreach \angle/\col in {90/yellow,210/magenta,330/cyan}{
+    \begin{scope}
+      \clip (\angle:.75) circle(1cm);
+      \fill[fill=\col] (\angle-120:.75) circle (1cm);
+    \end{scope}
+  }
+  \begin{scope}
+    \clip (90:.75) circle(1cm);
+    \clip (210:.75) circle(1cm);
+    \fill[fill=white] (330:.75) circle (1cm);
+  \end{scope}
+  \foreach \name/\angle/\dist\reta in {%
+    red/90/2/0, yellow/30/1.6/0,%
+    green/-30/2/180, cyan/-90/1.6/180,%
+    blue/-150/2/180, magenta/150/1.6/0%
+  } {%
+    \node[rotate=\angle-90+\reta,anchor=base,minimum width=3.8em,
+    font=\bfseries\footnotesize,text=white] at (\angle:\dist)
+    {\name};%
+  }
+  \begin{pgfonlayer}{background}
+    \node(cadre)[drop shadow,fit=(current bounding box),rounded corners,
+    line width=1pt,fill=black,inner sep=2mm]{};
+  \end{pgfonlayer}
+\end{tikzpicture}
+	\caption{Light Interferences}
+\end{figure}
 \subsection{Interference}
 Interference is a phenomenom associated with the wave-like behavior of
 electromagnetic radiation. The interference between two waves travelling through
@@ -216,7 +249,7 @@ TODO:\@ Fix double Y axis on these
 		\begin{tikzpicture}
 			\begin{axis}
 				[
-				samples=200
+				samples=200,
 				axis lines=middle,
 				axis line style={->},
 				xmin=0,
@@ -595,7 +628,7 @@ level, given that $d_{\text{c-c}}=1.41\si{\angstrom}$.
 \begin{align*}
 	E_n = \frac{n^2h^2}{8m_{e^{-}}L^2} &   & L=4\times d_{\text{c-c}}=5.64\si{\angstrom}
 \end{align*}
-\section{Quantum Model of Atoms}
+\section{Quantum Model of the Atom}
 \subsection{Hydrogenoid Atoms}
 Hydrogenoid atoms are composed of a single electron orbiting the nucleus.
 
