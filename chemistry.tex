@@ -120,41 +120,41 @@ of the mean through which the wave travels.
 Where $E$ is the energy of a photon or electron, $h$ is Planck's constant
 ($h = 6.62607\times 10^{-34}\si{\joule\second}$)
 \subsection{Electromagnetic Spectrum}
-TODO:\@ Add venn-diagram of light combinations. Use Tikz.
+TODO:\@ Figure out how to sensibly align/display these
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.65]{radiations}
 \end{figure}
 \begin{figure}
-\begin{tikzpicture}[line width=0]
-  \foreach \angle/\col in {90/red,210/blue,330/green}{
-    \fill[fill=\col] (\angle:.75) circle (1cm);
-  }
-  \foreach \angle/\col in {90/yellow,210/magenta,330/cyan}{
-    \begin{scope}
-      \clip (\angle:.75) circle(1cm);
-      \fill[fill=\col] (\angle-120:.75) circle (1cm);
-    \end{scope}
-  }
-  \begin{scope}
-    \clip (90:.75) circle(1cm);
-    \clip (210:.75) circle(1cm);
-    \fill[fill=white] (330:.75) circle (1cm);
-  \end{scope}
-  \foreach \name/\angle/\dist\reta in {%
-    red/90/2/0, yellow/30/1.6/0,%
-    green/-30/2/180, cyan/-90/1.6/180,%
-    blue/-150/2/180, magenta/150/1.6/0%
-  } {%
-    \node[rotate=\angle-90+\reta,anchor=base,minimum width=3.8em,
-    font=\bfseries\footnotesize,text=white] at (\angle:\dist)
-    {\name};%
-  }
-  \begin{pgfonlayer}{background}
-    \node(cadre)[drop shadow,fit=(current bounding box),rounded corners,
-    line width=1pt,fill=black,inner sep=2mm]{};
-  \end{pgfonlayer}
-\end{tikzpicture}
+	\begin{tikzpicture}[line width=0]
+		\foreach \angle/\col in {90/red,210/blue,330/green}{
+			\fill[fill=\col] (\angle:.75) circle (1cm);
+		}
+		\foreach \angle/\col in {90/yellow,210/magenta,330/cyan}{
+			\begin{scope}
+				\clip (\angle:.75) circle(1cm);
+				\fill[fill=\col] (\angle-120:.75) circle (1cm);
+			\end{scope}
+		}
+		\begin{scope}
+			\clip (90:.75) circle(1cm);
+			\clip (210:.75) circle(1cm);
+			\fill[fill=white] (330:.75) circle (1cm);
+		\end{scope}
+		\foreach \name/\angle/\dist\reta in {%
+			red/90/2/0, yellow/30/1.6/0,%
+			green/-30/2/180, cyan/-90/1.6/180,%
+			blue/-150/2/180, magenta/150/1.6/0%
+			} {%
+			\node[rotate=\angle-90+\reta,anchor=base,minimum width=3.8em,
+			font=\bfseries\footnotesize,text=white] at (\angle:\dist)
+			{\name};%
+		}
+		\begin{pgfonlayer}{background}
+			\node(cadre)[drop shadow,fit=(current bounding box),rounded corners,
+			line width=1pt,fill=black,inner sep=2mm]{};
+		\end{pgfonlayer}
+	\end{tikzpicture}
 	\caption{Light Interferences}
 \end{figure}
 \subsection{Interference}
@@ -163,66 +163,66 @@ electromagnetic radiation. The interference between two waves travelling through
 the same region in space yields another wave, which is the algebric sum of the
 two interferring waves.
 \begin{figure}[H]
-\pgfplotsset{
-axis lines=middle,
-axis line style={->},
-xmin=0,
-xmax=4.2*pi,
-xticklabels=empty,
-xtick=\empty,
-ymin=-1,
-ymax=1,
-yticklabels=empty,
-ytick=\empty,
-samples=200,
-domain=0:4*pi,
-every axis plot post/.append style={very thick},
-clip=false
-		 }% end of common axis set
+	\pgfplotsset{
+		axis lines=middle,
+		axis line style={->},
+		xmin=0,
+		xmax=4.2*pi,
+		xticklabels=empty,
+		xtick=\empty,
+		ymin=-1,
+		ymax=1,
+		yticklabels=empty,
+		ytick=\empty,
+		samples=200,
+		domain=0:4*pi,
+		every axis plot post/.append style={very thick},
+		clip=false
+	}% end of common axis set
 
-\begin{subfigure}[b]{0.4\textwidth}
-\begin{tikzpicture}
-\begin{axis}% 1. plot
-[yscale=0.5]
-\addplot[red] {(sin(deg(x)))};
-\node at (2*pi,-1.05) {\huge$+$};
-\end{axis}
-\begin{axis}% 2. plot
-[ yshift=-3cm, yscale=0.5]
-\addplot[blue] {(sin(deg(x)))};
-\node at (2*pi,-1.05) {\huge$=$};
-\end{axis}
-\end{tikzpicture}
+	\begin{subfigure}[b]{0.4\textwidth}
+		\begin{tikzpicture}
+			\begin{axis}% 1. plot
+				[yscale=0.5]
+				\addplot[red] {(sin(deg(x)))};
+				\node at (2*pi,-1.05) {\huge$+$};
+			\end{axis}
+			\begin{axis}% 2. plot
+				[ yshift=-3cm, yscale=0.5]
+				\addplot[blue] {(sin(deg(x)))};
+				\node at (2*pi,-1.05) {\huge$=$};
+			\end{axis}
+		\end{tikzpicture}
 
-\begin{tikzpicture}
-\begin{axis}% 3. plot
-\addplot[purple] {(sin(deg(x)))};
-\end{axis}
-\end{tikzpicture}
-\caption{Constructive interference}
-\end{subfigure}
-\hfill %%%% %%%% %%%% second image
-\begin{subfigure}[b]{0.4\textwidth}
-\begin{tikzpicture}
-\begin{axis}% 1. plot
-[yscale=0.5]
-\addplot[red] {(sin(deg(x)))};
-\node at (2*pi,-1.05) {\huge$+$};
-\end{axis}
-\begin{axis}% 2. plot
-[ yshift=-3cm,yscale=0.5]
-\addplot[blue] {(sin(deg(x+pi)))};
-\node at (2*pi,-1.05) {\huge$=$};
-\end{axis}
-\end{tikzpicture}
+		\begin{tikzpicture}
+			\begin{axis}% 3. plot
+				\addplot[purple] {(sin(deg(x)))};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Constructive interference}
+	\end{subfigure}
+	\hfill %%%% %%%% %%%% second image
+	\begin{subfigure}[b]{0.4\textwidth}
+		\begin{tikzpicture}
+			\begin{axis}% 1. plot
+				[yscale=0.5]
+				\addplot[red] {(sin(deg(x)))};
+				\node at (2*pi,-1.05) {\huge$+$};
+			\end{axis}
+			\begin{axis}% 2. plot
+				[ yshift=-3cm,yscale=0.5]
+				\addplot[blue] {(sin(deg(x+pi)))};
+				\node at (2*pi,-1.05) {\huge$=$};
+			\end{axis}
+		\end{tikzpicture}
 
-\begin{tikzpicture}
-\begin{axis}% 3. plot
-\addplot[purple] {0};
-\end{axis}
-\end{tikzpicture}
-\caption{Destructive interference}
-\end{subfigure}
+		\begin{tikzpicture}
+			\begin{axis}% 3. plot
+				\addplot[purple] {0};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Destructive interference}
+	\end{subfigure}
 \end{figure}
 
 \subsection{Stationary Waves}
@@ -600,21 +600,21 @@ well model.
 \subsection{Quantum Numbers}
 REVIEW NEEDED
 \begin{itemize}
-    \item Main Quantum Number --- $n$
-    \begin{itemize}
-        \item $n=1,2,3,\ldots,n\in\mathbb Z$
-        \item Characterizes the \emph{size} of the orbital.
-    \end{itemize}
-    \item Secondary Quantum Number --- $l$
-    \begin{itemize}
-        \item $l=0,\ldots,n-1$\\
-        \item Characterizes the \emph{shape} of the orbital
-    \end{itemize}
-    \item Magnetic Quantum Number --- $m_e$
-    \begin{itemize}
-        \item $m_e = -l,\ldots,0,\ldots,+l$
-        \item Characterizes the \emph{orientation} in space of the orbital
-    \end{itemize}
+	\item Main Quantum Number --- $n$
+	      \begin{itemize}
+	      	\item $n=1,2,3,\ldots,n\in\mathbb Z$
+	      	\item Characterizes the \emph{size} of the orbital.
+	      \end{itemize}
+	\item Secondary Quantum Number --- $l$
+	      \begin{itemize}
+	      	\item $l=0,\ldots,n-1$\\
+	      	\item Characterizes the \emph{shape} of the orbital
+	      \end{itemize}
+	\item Magnetic Quantum Number --- $m_e$
+	      \begin{itemize}
+	      	\item $m_e = -l,\ldots,0,\ldots,+l$
+	      	\item Characterizes the \emph{orientation} in space of the orbital
+	      \end{itemize}
 \end{itemize}
 
 
