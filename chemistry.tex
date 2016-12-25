@@ -1,16 +1,18 @@
 \documentclass{article}[10pt]
-\usepackage[utf8]{inputenc}
-\usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
-\usepackage{tikz}
-\usepackage{pgfplots}
-\usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{subcaption}
+\usepackage{booktabs}
 \usepackage{float}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{pgfplots}
+\usepackage[utf8]{inputenc}
 \usepackage{siunitx}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{wrapfig}
+
 \graphicspath{ {Images/} }
 \pgfplotsset{width=8cm,compat=1.14}
 \usetikzlibrary{backgrounds,shadows,fit,positioning}
@@ -616,6 +618,16 @@ REVIEW NEEDED
 	      	\item Characterizes the \emph{orientation} in space of the orbital
 	      \end{itemize}
 \end{itemize}
+The set of orbitals with the same main quantum number $n$ make a ``layer'' or
+level, and have, for hydrogenoid atoms, \emph{the same energy}, in which case
+we call them to be \emph{degenerate} orbitals.
+
+In a particular layer (level) the orbitals with the same $l$ make a sublayer (sublevel).
+\begin{align*}
+	\text{Number of orbitals in each sublayer}  &= 2l+1\\
+	\text{Number of orbitals in each level $n$} &= n^2 \\
+\end{align*}
+
 
 
 \end{document}
