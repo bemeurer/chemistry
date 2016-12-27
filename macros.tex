@@ -1,0 +1,15 @@
+\newcommand{\todo}[1]{}
+\renewcommand{\todo}[1]{{\color{red} TODO:\@ {#1}}}
+
+\makeatletter
+\newcounter{subimportleveldepth}
+\setcounter{subimportleveldepth}{0}
+\newcommand{\subimportlevel}[2]{
+	\expandafter\edef\csname @currentlevel\thesubimportleveldepth\endcsname{\thecurrentlevel}
+	\addtocounter{subimportleveldepth}{1}
+	\addtocounter{currentlevel}{-1}
+	\subimport*{#1}{#2}
+	\addtocounter{subimportleveldepth}{-1}
+	\setcounter{currentlevel}{\csname @currentlevel\thesubimportleveldepth\endcsname}
+}
+\makeatother

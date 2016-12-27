@@ -1,0 +1,31 @@
+\pgfplotsset{width=8cm,compat=1.14}
+\begin{tikzpicture}
+	\begin{axis}
+		[
+		axis y line=middle,
+		axis x line=bottom,
+		ymin=0,
+		ymax=10,
+		ytickmin=1,
+		ytickmax=0,
+		yticklabels=\empty,
+		ylabel={$V(x)$},
+		xtick={0,1,...,10},
+		xticklabels={0,,,,,,,,,,$a$},
+		xmin=0,
+		xmax=10,
+		xlabel={$x$},
+		]
+	\end{axis}
+	\begin{axis}
+		[
+		ticks=none,
+		xshift=0cm,
+		axis lines=middle,
+		ymin=0,
+		ymax=10,
+		xmin=-10,
+		xmax=0,
+		]
+	\end{axis}
+\end{tikzpicture}

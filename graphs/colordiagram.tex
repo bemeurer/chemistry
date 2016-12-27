@@ -1,0 +1,30 @@
+\pgfplotsset{compat=1.14}
+\begin{tikzpicture}[line width=0]
+    \foreach \angle/\col in {90/red,210/blue,330/green}{
+        \fill[fill=\col] (\angle:.75) circle (1cm);
+    }
+    \foreach \angle/\col in {90/yellow,210/magenta,330/cyan}{
+        \begin{scope}
+            \clip (\angle:.75) circle(1cm);
+            \fill[fill=\col] (\angle-120:.75) circle (1cm);
+        \end{scope}
+    }
+    \begin{scope}
+        \clip (90:.75) circle(1cm);
+        \clip (210:.75) circle(1cm);
+        \fill[fill=white] (330:.75) circle (1cm);
+    \end{scope}
+    \foreach \name/\angle/\dist\reta in {%
+        red/90/2/0, yellow/30/1.6/0,%
+        green/-30/2/180, cyan/-90/1.6/180,%
+        blue/-150/2/180, magenta/150/1.6/0%
+        } {%
+        \node[rotate=\angle-90+\reta,anchor=base,minimum width=3.8em,
+        font=\bfseries\footnotesize,text=white] at (\angle:\dist)
+        {\name};%
+    }
+    \begin{pgfonlayer}{background}
+        \node(cadre)[drop shadow,fit=(current bounding box),rounded corners,
+        line width=1pt,fill=black,inner sep=2mm]{};
+    \end{pgfonlayer}
+\end{tikzpicture}
