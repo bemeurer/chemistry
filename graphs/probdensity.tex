@@ -1,47 +1,45 @@
-\pgfplotsset{width=8cm,compat=1.14}
+\pgfplotsset{
+	axis lines=middle,
+	axis line style={->},
+	xmin=0,
+	xticklabels=empty,
+	xtick=\empty,
+	ymin=-1.2,
+	ymax=1.2,
+	yticklabels=empty,
+	ytick=\empty,
+	samples=200,
+	every axis plot post/.append style={very thick},
+	clip=true,
+}% end of common axis set
 \begin{tikzpicture}
-    \begin{axis}
-        [
-        axis lines=middle,
-        axis line style={-},
-        ymin=-1, ymax=1,
-        xmin=0, xmax = pi,
-        ylabel={$P_1(x)$},
-        ytick={-1,-0.5,...,0.5,1},
-        yticklabels={,,},
-        xticklabels={,,},
-        ylabel near ticks,
-        ]
-        \addplot[red, very thick,samples=200,domain=0:8*pi] {abs((sin(deg(x+pi))/2)*-1)};
-    \end{axis}
-    \begin{axis}
-        [
-        yshift=-3cm,
-        axis lines=middle,
-        axis line style={-},
-        ymin=-1, ymax=1,
-        xmin=0, xmax = 2*pi,
-        ylabel={$P_2(x)$},
-        ytick={-1,-0.5,...,0.5,1},
-        yticklabels={,,},
-        xticklabels={,,},
-        ylabel near ticks,
-        ]
-        \addplot[green, very thick,samples=200,domain=0:8*pi] {abs((sin(deg(x+pi))/2)*-1)};
-    \end{axis}
-    \begin{axis}
-        [
-        yshift=-6cm,
-        axis lines=middle,
-        axis line style={-},
-        ymin=-1, ymax=1,
-        xmin=0, xmax = 3*pi,
-        ylabel={$P_3(x)$},
-        ytick={-1,-0.5,...,0.5,1},
-        yticklabels={,,},
-        xticklabels={,,},
-        ylabel near ticks,
-        ]
-        \addplot[blue, very thick,samples=200,domain=0:8*pi] {abs((sin(deg(x+pi))/2)*-1)};
-    \end{axis}
+	\begin{axis}% 1. plot
+		[
+		domain=0:4*pi,
+		xmax=pi,
+		yscale=0.5,
+        ylabel={$\psi_1(x)$},
+		]
+		\addplot[red] {abs(sin(deg(x+pi))*-1)};
+	\end{axis}
+	\begin{axis}% 2. plot
+		[
+		domain=0:4*pi,
+		xmax=2*pi,
+		yshift=-3cm,
+		yscale=0.5,
+        ylabel={$\psi_2(x)$},
+		]
+		\addplot[blue] {abs(sin(deg(x+pi))*-1)};
+	\end{axis}
+	\begin{axis}% 3. plot
+		[
+		domain=0:4*pi,
+		xmax=3*pi,
+		yshift=-6cm,
+		yscale=0.5,
+        ylabel={$\psi_3(x)$},
+		]
+		\addplot[black] {abs(sin(deg(x+pi))*-1)};
+	\end{axis}
 \end{tikzpicture}

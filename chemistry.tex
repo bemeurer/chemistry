@@ -3,13 +3,13 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{booktabs}
+\usepackage{chemfig}
 \usepackage{coseoul}
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
 \usepackage{import}
 \usepackage{pgfplots}
-\usepackage[utf8]{inputenc}
 \usepackage{siunitx}
 \usepackage{subcaption}
 \usepackage{tikz}
@@ -74,7 +74,7 @@ Speed with which the wave propagates in a given direction.
 \end{figure}
 Note that the frequency, and the period are, unlike the wavelegth, independent
 of the mean through which the wave travels.
-
+\clearpage
 \subsection{Energy of an Electromagnetic Wave}
 \begin{align*}
 	E & = h\nu &   & E=nh\nu \\
@@ -93,6 +93,7 @@ Where $E$ is the energy of a photon or electron, $h$ is Planck's constant
 	\includegraphics[scale=0.6]{radiations}
 	\caption{Types of electromagnetic wave by wavelength.}\label{fig:radiations}
 \end{figure}
+\clearpage
 \subsection{Interference}
 Interference is a phenomenom associated with the wave-like behavior of
 electromagnetic radiation. The interference between two waves travelling through
@@ -128,8 +129,9 @@ from each other through an integer.
 With this we can see that the solutions are discrete, as opposed to being continuous, and the
 factor distinguishing them is the integer $n$, which we call a quatum number.
 \begin{figure}[H]
-\import{graphs/}{stationary}
-\caption{Stationary waves with varying $n$'s.}\label{fig:stationary}
+	\centering
+	\import{graphs/}{stationary}
+	\caption{Stationary waves with varying $n$'s.}\label{fig:stationary}
 \end{figure}
 
 \subsection{Electromagnetic Radiation}
@@ -228,13 +230,13 @@ If $\psi(x)$ represents a single particle, it's square will be \emph{probability
 of finding said particle at a point $x$.
 
 \subsection{Particle in a Box}
-Imagine a particle (electron, photon, and so on) confined to a region in space,
-unidimensional and of length $a$. It is limited (confined) by two ``walls'' of
-infinite potential, or an energy well.
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\import{graphs/}{energywell}
 	\caption{Energy well. $\forall x\le 0 \vee x\ge a : E_p=\infty$, also $\forall 0<x<a : E_p=0 $}\label{fig:energywell}
 \end{wrapfigure}
+Imagine a particle (electron, photon, and so on) confined to a region in space,
+unidimensional and of length $a$. It is limited (confined) by two ``walls'' of
+infinite potential, or an energy well.
 \begin{equation*}
 	E_n=\frac{n^2h^2}{8mL^2}
 \end{equation*}
@@ -247,22 +249,23 @@ functions depend only on the quantum number $n$.
 We now have a set of tuples $(\psi_n(x), E_n)$ which are solutions to
 Schrödinger's equation, when applied to a particle of mass $m$ constrained in an
 energy well.
-\begin{figure}
+\vspace{2.5cm}
+\begin{figure}[H]
 	\centering
-	\begin{minipage}[.5\textwidth]
+	\begin{minipage}{.5\textwidth}
 		\centering
 		\import{graphs/}{energylevels}
-		\captionof{Three first energy levels allowed for a particle in a potential box}
-		\label{fig:energylevels}
+		\captionof{figure}{Three first energy levels allowed for a particle in a potential box}\label{fig:energylevels}
 	\end{minipage}%
-	\begin{minipage}[.5\textwidth]
+	\begin{minipage}{.5\textwidth}
 		\centering
 		\import{graphs/}{wavefunctions}
-		\captionof{Three first wave functions for a given system}
-		\label{fig:wavefunctions}
+		\captionof{figure}{Three first wave functions for a given system}\label{fig:wavefunctions}
 	\end{minipage}
 \end{figure}
+\clearpage
 \begin{figure}
+	\centering
 	\import{graphs/}{wavefunctions}
 	\caption{Probability density}
 \end{figure}
@@ -272,14 +275,20 @@ energy well.
 	\item Energy is proportional to the number of nodes.
 	\item The above statements are true without loss of generality for any system characterized by a single quantum number.
 \end{itemize}
-\paragraph{Example}
-\todo{Insert molecule at the bottom of page 8.}
 
+\paragraph{Example}
 Using the particle in an energy well model, calculate the energy of the first energy
-level, given that $d_{\text{c-c}}=1.41\si{\angstrom}$.
-\begin{align*}
-	E_n = \frac{n^2h^2}{8m_{e^{-}}L^2} &   & L=4\times d_{\text{c-c}}=5.64\si{\angstrom}
-\end{align*}
+level for the following molecule, given that $d_{\text{c-c}}=1.41\si{\angstrom}$.
+
+\begin{figure}[H]
+	\centering
+	\import{molecules/}{1,3-butadiene}\label{fig:butadiene}
+\end{figure}
+\begin{alignat*}{2}
+	E_n = \frac{n^2h^2}{8m_{e^{-}}L^2} &                                       & L=4\times d_{\text{c-c}}=5.64 \\
+	                                   & E_1 = \frac{1^2h^2}{8m_{e^{-}}5.46^2} &                               \\
+\end{alignat*}
+\clearpage
 \section{Quantum Model of the Atom}
 \subsection{Hydrogenoid Atoms}
 Hydrogenoid atoms are composed of a single electron orbiting the nucleus.
