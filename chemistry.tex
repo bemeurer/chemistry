@@ -1,4 +1,4 @@
-\documentclass{article}[10pt]
+\documentclass[10pt]{article}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
 \usepackage{import}
+\usepackage[utf8]{inputenc}
 \usepackage{pgfplots}
 \usepackage{siunitx}
 \usepackage{subcaption}
@@ -58,14 +59,14 @@ Duration of a cycle $V=\frac{1}{T}$
 \subsubsection*{Wavenumber}
 Number of complete cycles per unit of time
 \begin{align*}
-	\bar{\nu} = \frac{1}{\lambda}
+	\bar{\nu} = \frac{1}{\lambda} \\
 \end{align*}
 
 \subsubsection*{Propagation Speed}
 Speed with which the wave propagates in a given direction.
 \begin{align*}
 	\nu = \frac{c}{\lambda} \\
-	\lambda = cT
+	\lambda = cT \\
 \end{align*}
 \begin{figure}[H]
 	\centering
@@ -214,7 +215,7 @@ it we must know at any given time the position and momentum of a given particle.
 	\centering
 	\begin{align*}
 		E = E_p + E_k \iff E\psi = (E_p + E_k)\psi                                   \\
-		\iff -\frac{h^2}{8\pi^2 m}\frac{d^2\psi(x)}{dx^2} + E_p\psi(x) = E_{\psi(x)}
+		\iff -\frac{h^2}{8\pi^2 m}\frac{d^2\psi(x)}{dx^2} + E_p\psi(x) = E_{\psi(x)} \\
 	\end{align*}
 	\caption*{Time independent Schrödinger equation on 1 dimension, describing any system that exibits particle-wave behavior}
 \end{figure}
@@ -266,7 +267,7 @@ energy well.
 \clearpage
 \begin{figure}
 	\centering
-	\import{graphs/}{wavefunctions}
+	\import{graphs/}{probdensity}
 	\caption{Probability density}
 \end{figure}
 
